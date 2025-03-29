@@ -17,6 +17,6 @@ export class QoutesService {
   constructor(private http: HttpClient) {}
 
   Get(): Observable<Qoutes[]> {
-    return this.http.get<Qoutes[]>('http://localhost:3000/quotes/getQuotes');
+    return this.http.get<Qoutes[]>('http://localhost:3001/quotes/getQuotes');
   }
 }
