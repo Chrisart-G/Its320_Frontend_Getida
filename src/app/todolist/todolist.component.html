@@ -1,0 +1,25 @@
+<div>
+    <h1 class="text-xl font-bold text-center text-purple-600">yawa!</h1>
+    
+    <form method="post" class="bg-pink-400 h-dvh grid place-items-center p-4">
+        <label class="text-purple-900 font-medium">
+            Add here 
+            <input [formControl]="item" type="text" class="bg-amber-600 p-2 rounded-md text-white outline-none focus:ring-2 focus:ring-amber-400">
+        </label>
+        <ol class="mt-4 space-y-1 text-white">
+            @for (item of list; track item) {
+                <li key=(item) class="bg-amber-500 p-2 rounded-md shadow-md">{{item}}</li>
+            }
+        </ol>
+        <button 
+        class="bg-purple-950 
+        px-4 py-2 mt-2 rounded-md 
+        shadow-md hover:bg-purple-400
+         transition-all" 
+         type="button" (click)="pushTolist()">
+            <p class="text-white">add</p>
+        </button>
+    </form>
+
+    
+</div>
