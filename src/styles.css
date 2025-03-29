@@ -1,2 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+@layer components {
+    .quote-header {
+        @apply text-lg font-bold text-gray-800 mb-4 text-center;
+    }
+
+    .quotes-container {
+        @apply flex flex-wrap justify-center gap-4 p-4;
+
+        .quote-card {
+            @apply shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300 w-[300px] sm:w-[350px] md:w-[400px];
+
+            &.special-author {
+                @apply bg-yellow-200;
+            }
+
+            &.regular-author {
+                @apply bg-white;
+            }
+
+            .quote-content {
+                @apply bg-blue-100 border border-gray-300 rounded-lg shadow-md p-4 w-full;
+            }
+
+            .quote-id {
+                @apply text-xs text-gray-500;
+
+                span {
+                    @apply font-semibold text-gray-800;
+                }
+            }
+
+            .quote-title {
+                @apply text-lg font-bold text-red-700;
+            }
+
+            .quote-text {
+                @apply text-gray-700 italic text-sm;
+            }
+
+            .quote-author {
+                @apply text-sm font-medium text-gray-600;
+
+                span {
+                    @apply text-black;
+                }
+            }
+
+            .quote-published {
+                @apply text-xs text-gray-500;
+            }
+        }
+    }
+}

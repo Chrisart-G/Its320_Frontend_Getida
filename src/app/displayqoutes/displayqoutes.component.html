@@ -1,18 +1,18 @@
-<p class="text-lg font-bold text-gray-800 mb-4 text-center">displayqoutes works!</p>
+<p class="quote-header">displayqoutes works!</p>
 
-<div class="flex flex-wrap justify-center gap-4 p-4">
+<div class="quotes-container">
     @for (qoute of qoutes; track qoute) {
         <div 
-            class="shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300 w-[300px] sm:w-[350px] md:w-[400px]"
-            [class.bg-yellow-200]="isspec_author(qoute.author)"  
-            [class.bg-white]="!isspec_author(qoute.author)"       
+            class="quote-card" 
+            [class.special-author]="isspec_author(qoute.author)"  
+            [class]="!isspec_author(qoute.author) ? 'regular-author' : ''"       
         >
-            <div class="bg-blue-100 border border-gray-300 rounded-lg shadow-md p-4 w-full">
-                <p class="text-xs text-gray-500">ID: <span class="font-semibold text-gray-800">{{qoute._id}}</span></p>
-                <h2 class="text-lg font-bold text-blue-700">{{qoute.title}}</h2>
-                <p class="text-gray-700 italic text-sm">"{{qoute.quotes}}"</p>
-                <p class="text-sm font-medium text-gray-600">Author: <span class="text-black">{{qoute.author}}</span></p>
-                <p class="text-xs text-gray-500">Published: {{qoute.published}}</p>
+            <div class="quote-content">
+                <p class="quote-id">ID: <span>{{qoute._id}}</span></p>
+                <h2 class="quote-title">{{qoute.title}}</h2>
+                <p class="quote-text">"{{qoute.quotes}}"</p>
+                <p class="quote-author">Author: <span>{{qoute.author}}</span></p>
+                <p class="quote-published">Published: {{qoute.published}}</p>
             </div>
         </div>
     }
